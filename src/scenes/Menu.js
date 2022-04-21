@@ -12,11 +12,11 @@ class Menu extends Phaser.Scene{
   create() {
       // display menu
       let menuConfig = {
-          fontFamily: 'Courier',
+          fontFamily: 'Cambria',
           fontSize: '28px',
-          backgroundColor: '#F3B141',
-          color: '#843605',
-          align: 'right',
+          backgroundColor: '#f4cccc',
+          color: '#b47674',
+          align: 'center',
           padding: {
               top: 5,
               bottom: 5,
@@ -26,9 +26,9 @@ class Menu extends Phaser.Scene{
 
               // show menu text
               this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'CAT COLONY', menuConfig).setOrigin(0.5);
-              this.add.text(game.config.width/2, game.config.height/2, 'Use ← → arrows to move & (F) to throw treats', menuConfig).setOrigin(0.5);
-              menuConfig.backgroundColor = '#00FF00';
-              menuConfig.color = '#000';
+              this.add.text(game.config.width/2, game.config.height/2, 'Use ← → arrows to move \n& (F) to throw treats', menuConfig).setOrigin(0.5);
+              menuConfig.backgroundColor = '#d5848b';
+              menuConfig.color = '#FFF';
               this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press ← for Novice or → for Expert', menuConfig).setOrigin(0.5);
 
               // define keys
@@ -49,7 +49,7 @@ class Menu extends Phaser.Scene{
       if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
         // hard mode
         game.settings = {
-          spaceshipSpeed: 4,
+          spaceshipSpeed: 6,
           gameTimer: 45000    
         }
         this.sound.play('sfx_select');
